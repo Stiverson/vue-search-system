@@ -56,18 +56,20 @@ const handleSearch = async () => {
 <style scoped>
 .search-bar-container {
   display: flex;
+  flex-wrap: wrap;         /* Permite que os itens quebrem linha em telas menores */
   justify-content: center; /* Centraliza os itens horizontalmente */
   align-items: center;     /* Alinha os itens verticalmente */
   gap: 1rem;               /* Espaço entre o input e o botão */
   padding: 1rem;
   width: 100%;
-  max-width: 800px;         /* Limita a largura máxima para manter o design responsivo */
+  max-width: 800px;        /* Limita a largura máxima */
   margin: 0 auto;          /* Centraliza o contêiner na tela */
 }
 
 .search-input {
-  width: 100%;
-  max-width: 500px;         /* Aumenta a largura do campo de busca */
+  flex: 1;                 /* Faz o input ocupar o máximo de espaço possível */
+  min-width: 200px;        /* Define uma largura mínima */
+  max-width: 500px;        /* Define uma largura máxima */
   padding: 0.8rem;
   font-size: 1rem;
   border-radius: 8px;
@@ -84,6 +86,7 @@ const handleSearch = async () => {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  min-width: 120px;        /* Define uma largura mínima para o botão */
 }
 
 .search-button:hover {
@@ -117,9 +120,27 @@ const handleSearch = async () => {
   color: rgb(3, 4, 15);
 }
 
+/* Estilo para telas menores (dispositivos móveis) */
 @media (max-width: 768px) {
+  .search-bar-container {
+    flex-direction: column; /* Alinha os itens verticalmente em telas menores */
+    gap: 0.8rem;            /* Reduz o espaçamento entre os itens */
+  }
+
   .search-input {
-    max-width: 350px; /* Reduz a largura em dispositivos menores */
+    max-width: 100%;        /* O input ocupa toda a largura disponível */
+    min-width: 100%;        /* O input preenche o container */
+  }
+
+  .search-button {
+    width: 100%;            /* O botão ocupa toda a largura em telas menores */
+    padding: 0.8rem;        /* Ajusta o padding para melhor proporção */
+  }
+
+  .response-data {
+    max-width: 100%;        /* Garante que a área de resposta se ajuste à largura da tela */
+    font-size: 0.9rem;      /* Reduz um pouco o tamanho da fonte para telas menores */
   }
 }
+
 </style>
