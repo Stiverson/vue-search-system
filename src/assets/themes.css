@@ -82,10 +82,28 @@ body.dark .toggle-button::after {
 
 /* Estilo da legenda no modo claro */
 body.light .toggle-label {
-  color:#fff;
+  color: #fff;
 }
 
 /* Estilo da legenda no modo escuro */
 body.dark .toggle-label {
   color: #fff;
+}
+
+/* Responsividade: Ajuste para telas pequenas */
+@media (max-width: 768px) {
+  /* Reposiciona o botão de toggle para baixo em dispositivos móveis */
+  .toggle-container {
+    position: relative; /* Tira a posição fixa do botão */
+    top: auto; /* Remove o top */
+    right: auto; /* Remove o right */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center; /* Centraliza o conteúdo */
+    margin-top: 20px; /* Adiciona um espaçamento superior */
+  }
+
+  /* Ajuste do botão */
+  .toggle-button {
+    margin-bottom: 10px; /* Espaço entre o botão e o texto */
+  }
 }
