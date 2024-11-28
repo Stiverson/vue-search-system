@@ -1,0 +1,91 @@
+/* Estilo geral do corpo */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+/* Tema Light */
+body.light {
+  background: url("../assets/galaxy-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+/* Tema Dark */
+body.dark {
+  background: url("../assets/galaxy-bg-dark.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+/* Estilos para o botão de troca de tema (toggle button) */
+.toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px; /* Posiciona o botão no canto superior direito */
+  display: flex;
+  align-items: center;
+  z-index: 10; /* Garante que o botão fique acima de outros conteúdos */
+}
+
+/* Estilo do botão */
+.toggle-button {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+  background-color: #f0f0f0; /* Cor inicial no modo claro */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão ativado para tema Claro */
+body.light .toggle-button {
+  background-color: #f0f0f0; /* Cor do botão claro */
+}
+
+/* Botão ativado para tema Escuro */
+body.dark .toggle-button {
+  background-color: #333; /* Cor do botão escuro */
+}
+
+.toggle-button::after {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Mover o botão para a direita quando o tema for escuro */
+body.dark .toggle-button::after {
+  transform: translateX(30px);
+}
+
+/* Estilo do texto da legenda ao lado do toggle */
+.toggle-label {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Estilo da legenda no modo claro */
+body.light .toggle-label {
+  color:#fff;
+}
+
+/* Estilo da legenda no modo escuro */
+body.dark .toggle-label {
+  color: #fff;
+}
