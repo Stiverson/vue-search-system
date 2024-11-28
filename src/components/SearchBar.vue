@@ -73,7 +73,7 @@ const handleSearch = async () => {
   padding: 0.8rem;
   font-size: 1rem;
   border-radius: 8px;
-  border: 2px solid #ccc;
+  border: 2px solid #030303;
   box-sizing: border-box;
 }
 

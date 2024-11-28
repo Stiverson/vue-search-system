@@ -42,7 +42,7 @@ export default {
 h1 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #333;
+  color: #f3eded;
 }
 
 .info {
