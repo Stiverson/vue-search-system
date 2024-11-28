@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref } from "vue";
 import SearchBar from "../components/SearchBar.vue";
 
 export default {
@@ -19,16 +19,14 @@ export default {
     SearchBar,
   },
   setup() {
-    // Variável para controlar o estado da pesquisa
     const isSearching = ref(false);
 
-    // Função chamada ao iniciar a pesquisa
     const handleSearch = () => {
       isSearching.value = true;
     };
 
     return { isSearching, handleSearch };
-  }
+  },
 };
 </script>
 
@@ -36,9 +34,15 @@ export default {
 .home {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Centraliza os componentes horizontalmente */
   text-align: center;
   padding: 50px 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .info {
@@ -47,11 +51,43 @@ export default {
   padding: 15px;
   border-radius: 8px;
   max-width: 500px;
+  text-align: center; /* Centraliza o texto */
+  display: flex; /* Garante o alinhamento do conteúdo interno */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  font-size: 1rem;
+  margin-left: 13px;
 }
 
+.info p {
+  margin: 0; /* Remove margens padrão */
+}
+
+/* Responsividade para dispositivos menores */
 @media (max-width: 768px) {
+  .home {
+    padding: 30px 13px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
   .info {
     font-size: 0.9rem;
+    padding: 10px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .info {
+    font-size: 0.8rem;
   }
 }
 </style>
+
